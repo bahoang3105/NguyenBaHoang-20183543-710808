@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import controller.implement.ShippingFeeCalculatorImpl;
+
 
 class HoangNB_ValidateAddressTest {
 
@@ -12,7 +14,7 @@ class HoangNB_ValidateAddressTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		placeOrderController = new PlaceOrderController();
+        placeOrderController = new PlaceOrderController(new ShippingFeeCalculatorImpl());
 	}
 
 	@ParameterizedTest

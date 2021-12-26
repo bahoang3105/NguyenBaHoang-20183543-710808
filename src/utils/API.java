@@ -45,7 +45,6 @@ public class API {
 	 */
 	private static HttpURLConnection setupConnection(String url, String method) throws IOException{
 		
-		// phan 1: setup
 		LOGGER.info("Request URL: " + url + "\n");
 		URL line_api_url = new URL(url);
 		HttpURLConnection conn = (HttpURLConnection) line_api_url.openConnection();
@@ -64,7 +63,6 @@ public class API {
 	 */
 	private static String readResponse(HttpURLConnection conn) throws IOException {
 		
-		// phan 2: doc du lieu tra ve tu server
 		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 		String inputLine;
 		StringBuilder response = new StringBuilder(); // ising StringBuilder for the sake of memory and performance

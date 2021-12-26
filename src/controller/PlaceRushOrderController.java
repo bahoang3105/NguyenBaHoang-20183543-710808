@@ -11,6 +11,12 @@ import java.util.logging.Logger;
  */
 public class PlaceRushOrderController {
 
+    private RushOrderInputValidator rushOrderInputValidator;
+
+    public PlaceRushOrderController(RushOrderInputValidator rushOrderInputValidator) {
+        this.rushOrderInputValidator = rushOrderInputValidator;
+    }
+    
     /**
      * Specify provinces where support rush order
      */
@@ -37,25 +43,19 @@ public class PlaceRushOrderController {
         if (location == null) {
             return false;
         }
-        if (PROVINCES_SUPPORT_RUSH_ODER.contains(location)) {
-            return true;
-        }
-        return false;
+        return PROVINCES_SUPPORT_RUSH_ODER.contains(location);
     }
 
     /**
-     * Method checks if user's media supports rush order or not
+     * Method checks user's media support rush order or not
      * @param mediaID Cart's media id
      */
     public boolean isItemsSupportRushOrder(int mediaID) {
-        if (MEDIA_IDS_SUPPORT_RUSH_ORDER.contains(mediaID)) {
-            return true;
-        }
-        return false;
+        return MEDIA_IDS_SUPPORT_RUSH_ORDER.contains(mediaID);
     }
 
     /**
-     * Method checks user's info support rush order or not
+     * Method checks if user's info support rush order or not
      * @param location User's province
      * @param mediaID Cart's media id
      */
