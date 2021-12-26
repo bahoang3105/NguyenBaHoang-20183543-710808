@@ -1,7 +1,5 @@
 package controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -9,7 +7,7 @@ import java.util.logging.Logger;
  * This class controls the flow of place rush order use case
  * @author HoangNB - 20183543
  */
-public class PlaceRushOrderController {
+public class PlaceRushOrderController extends PlaceOrderController {
 
     private RushOrderInputValidator rushOrderInputValidator;
 

@@ -66,13 +66,11 @@ public class API {
 		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 		String inputLine;
 		StringBuilder response = new StringBuilder(); // ising StringBuilder for the sake of memory and performance
-		while ((inputLine = in.readLine()) != null)
-			System.out.println(inputLine);
-		response.append(inputLine + "\n");
-		in.close();
-		String responseInfo = response.substring(0, response.length() - 1).toString();
-		LOGGER.info("Respone Info: " + responseInfo);
-		return responseInfo;
+
+		while ((inputLine = in.readLine()) != null) {
+			response.append(inputLine);
+		}
+		return response.toString();
 	}
 	
 	/**
